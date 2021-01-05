@@ -26,6 +26,7 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 		do_animation()
 		attempt_interaction()
+		do_transform()
 		if Input.is_action_just_pressed("toggle_inventory"):
 			get_tree().get_nodes_in_group("InventoryPannel")[0].toggle_inventory()
 	else:
@@ -68,6 +69,13 @@ func test_flip():
 		flip()
 	elif !facing_right and velocity.x > 1:
 		flip()
+
+func do_transform():
+	if(Input.is_action_just_pressed("transform")):
+		var i = load("res://Assets/Scenes/Player/PlayerDog.tscn").instance()
+		get_tree().root.add_child(i)
+		i.global_position = global_position
+		queue_free()
 
 #flips the player facing dierection
 func flip():

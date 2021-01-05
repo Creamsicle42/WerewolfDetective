@@ -26,6 +26,7 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 		do_animation()
 		attempt_interaction()
+		do_transform()
 		if Input.is_action_just_pressed("toggle_inventory"):
 			get_tree().get_nodes_in_group("InventoryPannel")[0].toggle_inventory()
 	else:
@@ -81,6 +82,14 @@ func attempt_interaction():
 			return
 		else:
 			overlaping_objects[0].interact("dog_%s" % PlayerInventory.selected_item)
+
+func do_transform():
+	if(Input.is_action_just_pressed("transform")):
+		var i = load("res://Assets/Scenes/Player/PlayerHuman.tscn").instance()
+		get_tree().root.add_child(i)
+		i.global_position = global_position
+		queue_free()
+		
 
 func do_animation():
 	if abs(velocity.x) > 1:
