@@ -7,9 +7,6 @@ var step_on := 0
 
 var current_waiting_actors := []
 
-func _process(delta):
-	if Input.is_action_just_pressed("ui_page_down"):
-		begin_cutscene(load("res://CutsceneScripts/TestCutscene.tres"))
 
 func begin_cutscene(var script:CutsceneScript):
 	var player = get_tree().get_nodes_in_group("player")[0]

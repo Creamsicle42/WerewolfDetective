@@ -33,6 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="WerewolfDetective"
+run/main_scene="res://TestLevelPart2ElectricBoogaloo.tscn"
 config/icon="res://Assets/Sprites/icon.png"
 
 [autoload]
