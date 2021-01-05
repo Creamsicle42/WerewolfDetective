@@ -28,6 +28,7 @@ func run_step():
 		var expression = Expression.new()
 		expression.parse(i.instruction)
 		expression.execute([], actor)
+		print_debug("sending instruction to %s"%(ACTOR_NAME_FORMAT % i.actor_tag))
 		if i.wait_till_end:
 			current_waiting_actors.append(actor)
 

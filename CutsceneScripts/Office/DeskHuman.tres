@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 actor_tag = "dialog"
-instruction = ""
+instruction = "cutscene_dialog(\"WritingDeskHuman\")"
 wait_till_end = false
 
 [resource]

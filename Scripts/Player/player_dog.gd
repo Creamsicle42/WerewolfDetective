@@ -10,7 +10,7 @@ const GRAVITY := 98.0
 var under_player_controll := true
 var facing_right := true
 var velocity := Vector2(0,0)
-var target_x = 0.0
+var target_x = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

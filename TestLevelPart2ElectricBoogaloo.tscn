@@ -31,6 +31,8 @@ z_index = -10
 texture = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="OfficeDesk"]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource( 5 )
 default_script = ExtResource( 6 )
 

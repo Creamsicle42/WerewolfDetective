@@ -10,13 +10,15 @@ const GRAVITY := 98.0
 var under_player_controll := true
 var facing_right := true
 var velocity := Vector2(0,0)
-var target_x = 0.0
+var target_x = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	if(Input.is_action_just_pressed("interact")):
+		print_debug("attempting interact")
 	if under_player_controll:
 		#Code to run if the player can controll their movement
 		#Obviously this shouldnt be running if the player is in a cutscene
@@ -84,6 +86,7 @@ func flip():
 
 func attempt_interaction():
 	if(Input.is_action_just_pressed("interact")):
+		print_debug("attempting interact")
 		var overlaping_objects = $InteractionTestBox.get_overlapping_areas()
 		if(overlaping_objects.size() == 0):
 			return

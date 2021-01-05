@@ -6,8 +6,8 @@ var current_parser : WhiskersParser
 var current_data : Dictionary
 var current_block : Dictionary
 
-onready var text_box = get_node("MarginContainer/VBoxContainer/MainText")
-onready var button_box = get_node("MarginContainer/VBoxContainer/SelectionButtons")
+onready var text_box = get_node("MarginContainer/HBoxContainer/VBoxContainer/MainText")
+onready var button_box = get_node("MarginContainer/HBoxContainer/VBoxContainer/SelectionButtons")
 
 func begin_dialog(var parser : WhiskersParser, var dialog : Dictionary):
 	current_parser = parser
