@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/ResourceScripts/cutscene_script.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/ResourceScripts/cutscene_instruction.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+actor_tag = "player"
+instruction = "move_to_x(100)"
+wait_till_end = true
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+actor_tag = "player"
+instruction = "move_to_x(200)"
+wait_till_end = true
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+actor_tag = "dialog"
+instruction = "cutscene_dialog(\"TestDialog\")"
+wait_till_end = true
+
+[resource]
+script = ExtResource( 1 )
+sequence = [ [ SubResource( 1 ) ], [ SubResource( 2 ) ], [ SubResource( 3 ) ] ]
