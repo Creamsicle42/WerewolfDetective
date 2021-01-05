@@ -116,7 +116,7 @@ tracks/3/keys = {
 extents = Vector2( 10, 20 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 20, 30 )
+extents = Vector2( 16, 16 )
 
 [node name="PlayerHuman" type="KinematicBody2D" groups=[
 "actor_player",
@@ -153,5 +153,5 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionTestBox"]
-position = Vector2( 0, -30 )
+position = Vector2( 0, -16 )
 shape = SubResource( 4 )

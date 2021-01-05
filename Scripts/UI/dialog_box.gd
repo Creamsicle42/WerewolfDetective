@@ -53,6 +53,9 @@ func advance_dialog(var id = ""):
 	set_text_portion()
 	
 
+func set_talksprite(var sprite):
+	$MarginContainer/HBoxContainer/TextureRect.texture = sprite
+
 func set_box_visible(var vis:bool):
 	visible = vis
 

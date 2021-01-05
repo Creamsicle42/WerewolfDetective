@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/UI/dialog_box.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/UI/NinepatchRect.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/dpcomic_dynamic.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Sprites/DialogTalksprites/WWDetecHumanProfile.png" type="Texture" id=4]
 
 [node name="DialogBox" type="Control" groups=[
 "DialogBox",
 ]]
-visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,19 +35,25 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 margin_right = 302.0
 margin_bottom = 52.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+editor/display_folded = true
+margin_right = 302.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
 custom_constants/separation = 0
 
-[node name="MainText" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="MainText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_right = 302.0
 margin_bottom = 52.0
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 
-[node name="Advance" type="Button" parent="MarginContainer/VBoxContainer/MainText"]
+[node name="Advance" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MainText"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -59,9 +65,16 @@ custom_fonts/font = ExtResource( 3 )
 text = ">"
 flat = true
 
-[node name="SelectionButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="SelectionButtons" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 52.0
 margin_right = 302.0
 margin_bottom = 52.0
 custom_constants/separation = -7
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MainText/Advance" to="." method="set_button_portion"]
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+visible = false
+margin_left = 250.0
+margin_right = 302.0
+margin_bottom = 52.0
+texture = ExtResource( 4 )
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MainText/Advance" to="." method="set_button_portion"]

@@ -18,7 +18,10 @@ func open_dialog(var script_path:String):
 	var data = parser.open_whiskers(completed_path)
 	var dialog_UI = get_tree().get_nodes_in_group("DialogBox")[0]
 	dialog_UI.begin_dialog(parser,data)
-	
+
+func set_talksprite(var id):
+	var dialog_UI = get_tree().get_nodes_in_group("DialogBox")[0]
+	dialog_UI.set_talksprite(TalkspriteDictionary.get_talksprite(id))
 
 func end_dialog():
 	if(is_in_cutscene):

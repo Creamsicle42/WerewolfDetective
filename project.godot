@@ -43,6 +43,7 @@ DialogWorldController="*res://Scripts/Singletons/dialog_world_controller.gd"
 PlayerInventory="*res://Scripts/Singletons/player_inventory.gd"
 ItemTextureDict="*res://Scripts/Singletons/item_texture_dict.gd"
 CutsceneController="*res://Scripts/Singletons/cutscene_controller.gd"
+TalkspriteDictionary="*res://Scripts/Singletons/talksprite_dictionary.gd"
 
 [display]
 
